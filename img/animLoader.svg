@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 239.5" enable-background="new 0 0 600 239.5" xml:space="preserve">
+<g id="background" display="none">
+	<rect y="-99.6" display="inline" fill="#FFCF5B" stroke="#000000" stroke-miterlimit="10" width="600" height="1024"/>
+</g>
+<g id="cercle">
+	<polygon fill="#FFCF5B" stroke="#FFFFFF" stroke-miterlimit="10" points="272.5,167.9 249.7,155 236.5,132.3 236.5,105.9 
+		249.7,83.1 272.5,69.9 298.9,69.9 321.5,83.1 334.5,105.9 334.5,132.3 321.5,155 298.9,167.9 	"/>
+</g>
+<g id="trait">
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="246.1" y1="78.3" x2="209.3" y2="38.8" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="325.2" y1="163.2" x2="362" y2="202.7" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="302.5" y1="176" x2="317.4" y2="227.9" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="270.5" y1="64.5" x2="255.6" y2="12.6" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="300.5" y1="64.3" x2="314.5" y2="12.1" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="270.5" y1="176.3" x2="256.5" y2="228.5" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="244.6" y1="161.1" x2="205.8" y2="198.6" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="328.1" y1="80.5" x2="366.9" y2="43" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="342.4" y1="106.9" x2="395" y2="94.7" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="229.4" y1="133" x2="176.8" y2="145.1" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="230.7" y1="103" x2="179.3" y2="86.3" class="rotate"/>
+	<line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="341" y1="138.8" x2="392.4" y2="155.5" class="rotate"/>
+</g>
+</svg>

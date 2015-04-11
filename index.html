@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Weather application</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <!-- APP LOADER -->
+         <div id="app-loader">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 600 228.5" enable-background="new 0 0 600 239.5" xml:space="preserve">
+                <g id="background" display="none">
+                    <rect y="-99.6" display="inline" fill="#FFCF5B" stroke="#000000" stroke-miterlimit="10" width="600" height="1024"/>
+                </g>
+                <g id="cercle">
+                    <polygon fill="#FFCF5B" stroke="#FFFFFF" stroke-miterlimit="20" points="272.5,167.9 249.7,155 236.5,132.3 236.5,105.9 
+                        249.7,83.1 272.5,69.9 298.9,69.9 321.5,83.1 334.5,105.9 334.5,132.3 321.5,155 298.9,167.9   " class="fill"/>
+                </g>
+                <g id="trait">
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="246.1" y1="78.3" x2="209.3" y2="38.8" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="325.2" y1="163.2" x2="362" y2="202.7" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="302.5" y1="176" x2="317.4" y2="227.9" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="270.5" y1="64.5" x2="255.6" y2="12.6" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="300.5" y1="64.3" x2="314.5" y2="12.1" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="270.5" y1="176.3" x2="256.5" y2="228.5" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="244.6" y1="161.1" x2="205.8" y2="198.6" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="328.1" y1="80.5" x2="366.9" y2="43" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="342.4" y1="106.9" x2="395" y2="94.7" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="229.4" y1="133" x2="176.8" y2="145.1" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="230.7" y1="103" x2="179.3" y2="86.3" class="rotate "/>
+                    <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="341" y1="138.8" x2="392.4" y2="155.5" class="rotate "/>
+                </g>
+                </svg>
+                <h1>Loading weather</h1>
+        </div>
+        <div class="app-body" id="app">
+            <div id="app-header">
+                <input type="text" placeholder="Enter city name; i.e : Paris" id="text">
+            </div>
+            <div id="app-content">
+                <!-- put it with json connection -->
+                <h1 id="city-weather"></h1>
+                <hr>
+                <img alt="today is sunny" id="mainWeather">
+                    <table id="table">
+                        <tr>
+                            <td class="largeTd" id="temp"></td>
+                            <td class="largeTd"><img src="img/vertBar.png" alt="vertical bar"></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                       <td id="humidite"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="wind"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="sunset"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="app-footer" id="footer">
+            
+        </div>
+ 
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/getWeather.js"></script>
+    </body>
+</html>
