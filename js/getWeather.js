@@ -4,6 +4,7 @@ var sunsetEl = document.getElementById("sunset");
 var tempEl = document.getElementById("temp");
 var cityWeather = document.getElementById("city-weather");
 var appBody = document.getElementById("app");
+var geobtn = document.getElementById("localis");
 
 document.getElementById("text").addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
@@ -11,7 +12,13 @@ document.getElementById("text").addEventListener('keypress', function (e) {
     if (key == 13) {
         var inputValue = document.getElementById("text").value;
         getWeather(inputValue);
+        removeErr();
+        setPainting();
     }
+}, false);
+
+geobtn.addEventListener('touchstart',function(){
+    init();
 }, false);
 
 function setText(temp,speed,humidite,context,hours,cityname){
@@ -145,7 +152,6 @@ function setPreview(element, tempX, context, date,compteur,code){
 
     // prevent of creating the same nodes.
     if(document.getElementById("un") && compteur == 0){
-        setPainting();
         var el1 = document.getElementById("un");
         var el2 = document.getElementById("deux");
         var el3 = document.getElementById("three");

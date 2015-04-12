@@ -60,7 +60,12 @@
         </div>
         <div class="app-body" id="app">
             <div id="app-header">
-                <input type="text" placeholder="Enter city name; i.e : Paris" id="text">
+                <table class="head">
+                    <tr>
+                        <td class="headTd"><input type="text" placeholder="Enter city name; i.e : Paris" id="text"></td>
+                        <td class="smallTd"><div id="localis"></div></td>
+                    </tr>
+                </table>
             </div>
             <div id="app-content">
                 <!-- put it with json connection -->
@@ -91,7 +96,6 @@
         <div class="app-footer" id="footer">
             
         </div>
- 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/getWeather.js"></script>

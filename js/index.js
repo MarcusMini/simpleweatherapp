@@ -36,19 +36,25 @@ var myApp = {
     }
 };
 
+
 var geoValue = {
     long : this,
     lat : this,
     getCityName : function(){
+        removeErr();
+        setPainting();
         var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+this.lat+','+this.long+'&sensor=true';
         var request = new XMLHttpRequest();
         request.open('GET',url, true);
-        request.onreadystatechange = function(){
+        request.onload = function(){
           if(request.readyState == 4 && request.status == 200){
             var data = JSON.parse(request.responseText);
             var address = data.results[0].address_components[2].long_name;
             getWeather(address);
           }
+        };
+        request.onerror = function(){
+            AddError("Oops we haven’t been able to gather the weather forecast. Make sure that your internet connection is activate", 0);
         };
         request.send();
     }
@@ -69,7 +75,7 @@ function call(){
     init();
 }
 
-function AddError(message){
+function AddError(message,codeErreur){
     var loader = document.getElementById("app-loader");
 
     var AppError = document.createElement("div");
@@ -110,7 +116,13 @@ function AddError(message){
     var id = document.getElementById("button");
     id.addEventListener('touchstart', function(){
         id.classList.add("focus");
-        init();
+            if(!codeErreur){
+                init();
+            }
+            else{
+                var inputValue = document.getElementById("text").value;
+                getWeather(inputValue);
+            } 
     }, false);
 
     id.addEventListener('touchend', function(){
@@ -118,8 +130,16 @@ function AddError(message){
     }, false);
 }
 
+function removeErr(){
+    var loader = document.getElementById("app-loader");
+
+    if(document.getElementById("app-error")){
+        loader.removeChild(loader.childNodes[4]);
+    }
+}
+
 function onError(error){
-    AddError("Oops we haven’t been able to determine your location. Make sure that your GPS is activate");
+    AddError("Oops we haven’t been able to determine your location. Make sure that your GPS is activate",0);
 }
 
 function setPainting(){
@@ -134,7 +154,7 @@ function getWeather(cityname){
     var weatherRequest = new XMLHttpRequest();
     var url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22'+cityname+'%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';    
     weatherRequest.open("GET",url,true);
-    weatherRequest.onreadystatechange = function(){
+    weatherRequest.onload = function(){
           if(weatherRequest.readyState == 4 || weatherRequest.readyState == 200){
             var data = JSON.parse(weatherRequest.responseText);
             currentTemperature = data.query.results.channel.item.condition.temp;
@@ -145,10 +165,7 @@ function getWeather(cityname){
             codeCurrent = data.query.results.channel.item.condition.code;
             setData(currentTemperature,currentWind,currentHumidity,currentText,sunset,cityname,codeCurrent);  
 
-            //alert(data.query.results.channel.forecast);
-
             for(var i in data.query.results.channel.item.forecast){
-                //alert(data.query.results.channel.item.forecast[i].date);
                 if(compteur < 3){
                     var element = ["un","deux","three"];
                     var code = data.query.results.channel.item.forecast[i].code;
@@ -161,7 +178,11 @@ function getWeather(cityname){
             }
             compteur = 0;
           }
-        }
+        };
+        weatherRequest.onerror = function(){
+            AddError("Oops we haven’t been able to gather the weather forecast. Make sure that your internet connection is activate",1);
+        };
+    
     weatherRequest.send();
 }
 
